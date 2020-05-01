@@ -27,12 +27,15 @@
     "test": "ts-node tests/index.js | tap-spec",
     "watch": "tsc - w",
     "watch-test": "nodemon --delay 0.5 --ignore src --exec ts-node tests/index.js | tap-spec",
-    "watch-all": "concurrently \"npm run watch\" \"npm run watch-test\""
+    "watch-all": "concurrently \"npm run watch\" \"npm run watch-test\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "dependencies": {
     "bluebird": "^3.5.0",
     "magnet-core": "^4.0.1",
-    "redis": "^2.6.5"
+    "redis": "^2.6.5",
+    "snyk": "^1.316.2"
   },
   "devDependencies": {
     "@types/node": "^8.0.19",
@@ -46,5 +49,6 @@
   },
   "engines": {
     "node": ">=6.9.5"
-  }
+  },
+  "snyk": true
 }
